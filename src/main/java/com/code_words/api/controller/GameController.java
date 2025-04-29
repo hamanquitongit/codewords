@@ -28,7 +28,7 @@ public class GameController {
     @Autowired
     MainGameService gameService;
 
-    @PostMapping(consumes = MediaType.ALL_VALUE)
+    @PostMapping
     public GameStartResponse gameStart() throws InvalidDifficultyException {
         GameState newGame = gameService.generateInitialGameState("easy");
         memService.cacheGame(newGame);
